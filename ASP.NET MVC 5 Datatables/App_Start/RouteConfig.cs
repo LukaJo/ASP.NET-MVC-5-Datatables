@@ -16,7 +16,7 @@ namespace ASP.NET_MVC_5_Datatables
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Demo", action = "ShowGrid", id = UrlParameter.Optional }
             );
         }
     }
