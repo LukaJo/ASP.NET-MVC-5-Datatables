@@ -17,7 +17,7 @@ namespace ASP.NET_MVC_5_Datatables.Controllers
             return View();
         }
 
-        public JsonResult LoadData()
+        public ActionResult LoadData()
         {
             try
             {
@@ -50,7 +50,7 @@ namespace ASP.NET_MVC_5_Datatables.Controllers
                     //Search    
                     if (!string.IsNullOrEmpty(searchValue))
                     {
-                        customerData = customerData.Where(m => m.CompanyName.Contains(searchValue));//staviti prvo branch za obican search
+                        customerData = customerData.Where(m => m.CompanyName == searchValue);
                     }
 
                     //total number of rows count     
