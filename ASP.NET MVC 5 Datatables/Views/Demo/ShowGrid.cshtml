@@ -77,6 +77,34 @@
         });
     </script>
 
+    <script>
+
+
+    function DeleteData(CustomerID) {
+        if (confirm("Are you sure you want to delete ...?")) {
+            Delete(CustomerID);
+        }
+        else {
+            return false;
+        }
+    }
+
+
+    function Delete(CustomerID) {
+        var url = '@Url.Content("~/")' + "Demo/DeleteCustomer";
+        $.post(url, { ID: CustomerID }, function (data) {
+            if (data == "Deleted") {
+                alert("Delete Customer !");
+                oTable = $('#demoGrid').DataTable();
+                oTable.draw();
+            }
+            else {
+                alert("Something Went Wrong!");
+            }
+        });
+    }
+    </script>
+
 </head>
 <body>
     <div class="container">
